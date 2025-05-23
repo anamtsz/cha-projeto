@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Diário de bordo - Projeto Chá</title>
+  <!-- Importa o arquivo externo de estilos CSS chamado "mm.css" -->
+
+  <link rel="stylesheet" href="ddb.css">
+</head>
+<body>
+
+  <h1>Diário de Bordo - Projeto Chá</h1>
+
+  <!-- Div que contém o logo inicial do projeto -->
+
+  <div id="logo-inicial"> <!-- div = container -->
+    <!-- Imagem do logo que será ocultada após clicar em alguma opção -->
+    <img src="log.png" alt="Logo do Projeto Chá">
+  </div>
+
+  <!-- Container para os botões das opções -->
+  <div class="botoes">
+    <script>
+      // Exibe um alerta de boas-vindas ao carregar a página
+      let ss = prompt("Digite seu nome")
+      let n = "Seja bem-vindo ao site da Equipe Campal " +ss+ "! Clique em 'OK' para escolher uma fruta ou planta. ";
+      alert(n);
+    </script>
+
+    <!-- Botões que chamam a função mostrar com o id correspondente ao conteúdo e o próprio botão -->
+    <button id="btn-uva" onclick="mostrar('uva', this)">Uva</button>
+    <button id="btn-babosa" onclick="mostrar('babosa', this)">Babosa</button>
+    <button id="btn-hortela" onclick="mostrar('hortela', this)">Hortelã</button>
+  </div>
+
+  <!-- Conteúdo sobre Uva -->
+  <div id="uva" class="conteudo" style="display:none;">
+    <h2>Uva <i>(Vitis Vinifera)</i></h2>
+    <p>A uva, originária do Oriente Médio e Ásia Menor, 
+      foi cultivada desde o período Neolítico (cerca de
+      6 a 8 mil anos atrás), e se espalhou pelo mundo 
+      após o Império Romano. No Brasil, o cultivo começou
+      em 1532, com a chegada das mudas trazidas pelos 
+      portugueses. A imigração italiana no Sul e Sudeste 
+      do país impulsionou a viticultura, tornando o Brasil
+      um grande produtor de uvas.</p>
+
+    <h3>Benefícios</h3>
+    <ul>
+      <li>Rica em antioxidantes.</li>
+      <li>Auxilia na saúde cardiovascular.</li>
+      <li>Melhora a digestão.</li>
+    </ul>
+    
+    <h3>Malefícios</h3>
+    <ul>
+      <li>Consumo excessivo pode causar aumento de glicose.</li>
+      <li>Pode conter resíduos de pesticidas se não for orgânica.</li>
+    </ul>
+
+    <!-- Imagens relacionadas à uva, clicáveis para abrir modal -->
+    <div class="imagens-pequenas">
+      <img src="https://th.bing.com/th/id/OIP.zNRwavNlPI3xTw6EH08eeAHaFA?cb=iwc2&rs=1&pid=ImgDetMain" alt="GELEIA DE UVA" onclick="abrirModal(this)" />
+      <img src="https://difundir.org/wp-content/uploads/2015/04/4-cosas-que-le-hace-la-musica-a-tu-cerebro-114.jpg" alt="SORVETE DE UVA" onclick="abrirModal(this)" />  
+    </div>
+  </div>
+
+  <!-- Conteúdo sobre Babosa -->
+  <div id="babosa" class="conteudo" style="display:none;">
+    <h2>Babosa <i>(Aloe Vera)</i></h2>
+    <p>A babosa é nativa do norte da África e do Oriente Médio. 
+      É uma planta xerófita que se adapta bem a ambientes secos 
+      e hostis, como desertos e estepes. A babosa também é cultivada 
+      em diversas regiões do mundo, incluindo o Brasil.</p>
+
+    <h3>Benefícios</h3>
+    <ul>
+      <li>Propriedades anti-inflamatórias.</li>
+      <li>Ajuda na cicatrização de feridas.</li>
+      <li>Hidrata e acalma a pele.</li>
+    </ul>
+
+    <h3>Malefícios</h3>
+    <ul>
+      <li>Uso excessivo pode causar diarreia.</li>
+      <li>Algumas pessoas podem ter reações alérgicas.</li>
+    </ul>
+
+    <!-- Imagens relacionadas à babosa, clicáveis para abrir modal -->
+    <div class="imagens-pequenas">
+      <img src="https://th.bing.com/th/id/OIP.MJzjrD1mvbGZ6iiR0ah40AHaHa?cb=iwc2&w=500&h=500&rs=1&pid=ImgDetMai" alt="SABONETE DE BABOSA" onclick="abrirModal(this)" />
+      <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98q-lmmgg08yztbfbf "  alt="TONICO DE BABOSA"  onclick="abrirModal(this)" />
+    </div>
+  </div>
+
+  <!-- Conteúdo sobre Hortelã -->
+  <div id="hortela" class="conteudo" style="display:none;">
+    <h2>Hortelã <i>(Mentha spicata)</i></h2>
+    <p>A hortelã é Originária do norte da África e oeste da Ásia, 
+      foi amplamente utilizada na medicina antiga, especialmente 
+      no Egito Grécia e Roma. Ela é uma planta perene, ou seja, 
+      cresce continuamente ao longo do tempo, permitindo colheitas 
+      recorrentes. A hortelã tolera diversos climas, incluindo os 
+      mais frios, desde que o solo não congele completamente.<p>
+
+    <h3>Benefícios</h3>
+    <ul>
+      <li>Melhora a digestão.</li>
+      <li>Alivia dores de cabeça leves.</li>
+      <li>Possui propriedades antimicrobianas.</li>
+    </ul>
+
+    <h3>Malefícios</h3>
+    <ul>
+      <li>Consumo excessivo pode causar azia.</li>
+      <li>Não recomendado para pessoas com refluxo gastroesofágico.</li>
+    </ul>
+
+    <!-- Imagens relacionadas à hortelã, clicáveis para abrir modal -->
+    <div class="imagens-pequenas">
+      <img src="https://img.chefkoch-cdn.de/rezepte/1614251268657693/bilder/1325871/crop-960x720/joghurtdressing.jpg" alt="PATÊ DE HORTELÃ" onclick="abrirModal(this)" />
+      <img src="https://th.bing.com/th/id/OIP.kk3MVmU6E6ARIrAkrHI5tAHaE3?cb=iwc2&w=960&h=630&rs=1&pid=ImgDetMain" alt="BRIGADEIRO DE HORTELÃ" onclick="abrirModal(this)" />
+    </div>
+  </div>
+
+  <!-- Modal para exibir imagens ampliadas ao clicar nas miniaturas -->
+  <div id="modalImagem" onclick="fecharModal(event)" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;z-index:1000;">
+    <div class="modal-conteudo" style="position:relative;max-width:90%;max-height:90%;text-align:center;">
+      <!-- Imagem ampliada no modal -->
+      <img id="imagemModal" src="" alt="Imagem Ampliada" style="width:100%;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,0.7);display:block;margin:0 auto;" />
+      <!-- Legenda da imagem ampliada -->
+      <div id="legendaImagem" style="color:#fff;margin-top:10px;font-size:18px;"></div>
+    </div>
+  </div>
+
+  <script>
+    // Função para mostrar o conteúdo selecionado, ocultar os outros e alterar o background
+    function mostrar(id, botao) {
+      // Oculta o logo inicial quando uma opção é selecionada
+      const logo = document.getElementById('logo-inicial');
+      if (logo) logo.style.display = 'none';
+
+      // Esconde todos os conteúdos
+      document.querySelectorAll('.conteudo').forEach(div => div.style.display = 'none');
+      // Exibe o conteúdo do id selecionado
+      document.getElementById(id).style.display = 'block';
+
+      // Remove a classe "ativo" de todos os botões para resetar o estilo
+      document.querySelectorAll('.botoes button').forEach(b => {
+        b.classList.remove('ativo-uva', 'ativo-babosa', 'ativo-hortela');
+      });
+      // Adiciona a classe "ativo" ao botão clicado para destacar
+      botao.classList.add('ativo-' + id);
+
+      // Define os backgrounds para cada conteúdo
+      const bg = {
+        uva: 'url("https://img.freepik.com/premium-photo/juicy-purple-grape-bunch-fresh-from-nature-organic-growth_670382-151083.jpg")',
+        babosa: 'url("https://www.coisasdaroca.com/wp-content/uploads/2017/08/v-9.jpg")',
+        hortela: 'url("https://th.bing.com/th/id/R.a2f78ef5ed942df8c94ee7393c8c75d3?rik=aIN3TgZHP6aHJA&pid=ImgRaw&r=0")'
+      };
+      // Aplica o background da página conforme a fruta/planta selecionada
+      document.body.style.backgroundImage = bg[id];
+    }
+
+    // Função para abrir o modal com a imagem clicada
+    function abrirModal(img) {
+      document.getElementById('modalImagem').style.display = 'flex';
+      const modalImg = document.getElementById('imagemModal');
+      const legenda = document.getElementById('legendaImagem');
+      
+      // Atualiza a imagem e legenda no modal
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+      legenda.innerText = img.alt;
+    }
+
+    // Função para fechar o modal quando clicar fora da imagem
+    function fecharModal(e) {
+      // Fecha modal somente se o clique for no fundo (div com id modalImagem)
+      if (e.target.id === 'modalImagem') {
+        document.getElementById('modalImagem').style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
+ <!--MODAL == Janela sobreposta-->

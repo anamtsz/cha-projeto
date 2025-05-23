@@ -1,0 +1,127 @@
+ body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  /*padding é o preenchimento interno.*/
+  background-size: cover;
+  background-position: center;
+  background-color: #f5f5f5;
+  transition: background 1s ease;
+    } 
+#logo-inicial {
+  display: flex;  /* container flexível, permitindo alinhar seus elementos filhos de forma mais controlada.*/
+  justify-content: center;  /* faz que a imagem nao fique colada no topo da pagina.*/
+  margin-top: 20px;}
+
+#logo-inicial img {
+  max-width: 300px;   /* Define a largura máxima da imagem para 300px, mantendo a proporção */
+  height: auto;       /* Ajusta a altura proporcionalmente para não distorcer a imagem */
+}
+
+h2 {
+  text-align: center; /* Centraliza o texto horizontalmente */
+  color: #20c911;     /* Cor verde */
+}
+
+h1 {
+  text-align: center;
+  color: #1e3e23;    
+}
+
+.botoes {
+  display: flex;          /* Define um container flexível para alinhar itens em linha (por padrão) */
+  justify-content: center; /* Centraliza os itens dentro do container no eixo horizontal */
+  gap: 10px;             /* Espaçamento entre os itens flex (botões) */
+  margin-top: 20px;      /* Espaço acima do container */
+}
+
+button {
+  width: 200px;
+  height: 60px;
+  font-size: 20px;
+  border: none;           /* Remove a borda padrão do botão */
+  border-radius: 8px;     /* Bordas arredondadas para suavizar o visual */
+  background: #ddd;       /* Cor de fundo cinza claro */
+  cursor: pointer;        /* Cursor muda para mãozinha ao passar o mouse */
+  color: black;
+  transition: background-color 0.3s; /* Transição suave de cor do fundo ao mudar estado (hover) */
+}
+
+button:hover {
+  background: #ccc;       /* Muda a cor do fundo para cinza um pouco mais escuro ao passar o mouse */
+}
+
+/* Classes para botões com estados ativos e cores específicas, usadas via JS */
+.ativo-uva { background: #7e08ad; color: white; }
+.ativo-babosa { background: #086910; color: white; }
+.ativo-hortela { background: #20c911; color: white; }
+
+.conteudo {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;     /* Borda cinza clara */
+  border-radius: 10px;        /* Bordas arredondadas */
+  background: #fff;           /* Fundo branco */
+  display: none;              /* Elemento oculto inicialmente (normalmente mostra ao clicar) */
+}
+
+.conteudo h2 { color: #333; }
+.conteudo p, .conteudo ul { color: #555; }
+
+/* Container para várias imagens pequenas com layout flexível */
+.imagens-pequenas {
+  display: flex;              /* Layout flexível */
+  flex-wrap: wrap;            /* Permite quebrar linha quando não couber horizontalmente */
+  justify-content: center;    /* Centraliza as imagens na linha */
+  gap: 20px;                  /* Espaço entre as imagens */
+  margin-top: 15px;
+}
+
+.imagens-pequenas img {
+  width: 45%;                 /* Cada imagem ocupa 45% da largura do container, permitindo 2 por linha com espaço */
+  max-width: 300px;           /* Limita a largura máxima para 300px */
+  border-radius: 8px;         /* Bordas arredondadas */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Sombra leve para dar profundidade */
+  cursor: pointer;            /* Cursor de clique */
+  transition: transform 0.3s; /* Transição suave para transformação (como escala) */
+}
+
+.imagens-pequenas img:hover {
+  transform: scale(1.05);     /* Aumenta a imagem em 5% quando o mouse passa por cima */
+}
+
+/* Modal (janela pop-up) para mostrar imagem ampliada */
+#modalImagem {
+  display: none;              /* Oculto por padrão */
+  position: fixed;            /* Fixa a posição na tela, mesmo ao rolar a página */
+  left: 0; top: 0;            /* Posição no canto superior esquerdo da tela */
+  width: 100%; height: 100%;  /* Ocupa toda a tela */
+  background: rgba(0,0,0,0.8); /* Fundo preto transparente para efeito de overlay */
+  justify-content: center;    /* Centraliza horizontalmente o conteúdo modal (usando flexbox) */
+  align-items: center;        /* Centraliza verticalmente o conteúdo */
+  z-index: 1000;              /* Garante que fique na frente de outros elementos */
+}
+
+#modalImagem .modal-conteudo {
+  max-width: 90%;             /* Limita o conteúdo a 90% da largura da tela */
+  max-height: 90%;            /* Limita altura */
+  position: relative;         /* Para posicionar elementos filhos (como botão fechar) relativos a este container */
+}
+
+#modalImagem img {
+  width: 100%;                /* Imagem ocupa toda a largura do modal-conteudo */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.7); /* Sombra mais escura e maior para destacar */
+  display: block;             /* Remove espaços em volta da imagem */
+  margin: 0 auto;             /* Centraliza a imagem */
+}
+
+/* Botão fechar do modal */
+#modalImagem .fechar {
+  position: absolute;         /* Posicionado relativo ao modal-conteudo */
+  top: -40px;                 /* Fica acima do modal */
+  right: 0;                   /* Alinhado à direita */
+  font-size: 40px;            /* Grande para facilitar o clique */
+  color: white;
+  cursor: pointer;            /* Mãozinha para indicar que pode clicar */
+  user-select: none;          /* Impede que o usuário selecione o "X" acidentalmente */
+}
